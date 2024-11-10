@@ -1,0 +1,59 @@
+
+
+body{
+    background: rgba(0, 0, 0,1);
+    color: rgb(255, 255, 255);
+    width: 1fr;
+    padding: 50px 15%;
+    margin:  25px auto;
+    border-radius: 15px;
+    font-family: 'Gill Sans', Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+#headshot{
+    border-radius: 50px;
+}
+
+#subtitle{
+    font-size: 18px;
+    color: gray;
+    font-family: 'Geist Mono';
+}
+
+.display-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.img-wrapper > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 5 / 3;
+    object-fit: cover;
+    object-position: center;
+}
+
+.img-wrapper > p {
+    position: absolute;
+    inset: 0;
+    font-size: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.doto-title {
+    line-height: 5px;
+    font-size: 50px;
+    font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "ROND" 100;
+  }
