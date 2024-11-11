@@ -1,0 +1,40 @@
+body{
+    background: rgba(0, 0, 0,1);
+    color: rgb(255, 255, 255);
+    width: 1fr;
+    padding: 50px 7vw;
+    margin:  25px auto;
+    border-radius: 15px;
+    font-family: 'Geist Mono', 'Gill Sans', Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+.doto-title {
+    line-height: 50px;
+    font-size: 50px;
+    font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+      "ROND" 100;
+}
+
+#back-button {
+    font-family: 'Geist Mono';
+    color: steelblue;
+    font-size: 20px;
+}
+
+.main-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.img-wrapper {
+    margin-right: 10%;
+}
+
+#main-image {
+    border-radius: 10px;
+}
