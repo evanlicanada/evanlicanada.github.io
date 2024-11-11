@@ -2,7 +2,7 @@ body{
     background: rgba(0, 0, 0,1);
     color: rgb(255, 255, 255);
     width: 1fr;
-    padding: 50px 15%;
+    padding: 50px 7vw;
     margin:  25px auto;
     border-radius: 15px;
     font-family: 'Geist Mono', 'Gill Sans', Arial, Helvetica, sans-serif;
@@ -34,7 +34,7 @@ body{
 .about-link {
     font-family: 'Geist Mono';
     color: steelblue;
-    font-size: 1.5vh;
+    font-size: 20px;
 }
 
 #heading-line {

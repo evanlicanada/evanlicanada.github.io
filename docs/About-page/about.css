@@ -1,0 +1,30 @@
+body{
+    background: url(background.jpg);
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    width: 1fr;
+    padding: 50px 15%;
+    min-width: 250px;
+    max-width: 700px;
+    margin:  25px auto;
+    border-radius: 15px;
+    font-family: 'Geist Mono', 'Gill Sans', Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+h1 {
+    line-height: 5px;
+    font-size: 50px;
+    font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+      "ROND" 100;
+}
+
+#back-button {
+    font-family: 'Geist Mono';
+    color: steelblue;
+    font-size: 20px;
+}
