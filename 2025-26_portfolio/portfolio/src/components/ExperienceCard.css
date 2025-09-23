@@ -1,0 +1,54 @@
+/* src/components/ExperienceCard.css */
+.experience-card {
+  width: 100%;
+  height: 200px; /* Adjust as needed */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Initial darkness */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  backdrop-filter: blur(0);
+  transition: backdrop-filter 0.3s ease;
+}
+
+.experience-card:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px); /* Blurs the background on hover */
+}
+
+.company-name, .job-title, .arrow-icon {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.arrow-icon {
+  font-size: 2rem;
+  position: absolute;
+  right: 20px;
+  bottom: 50%;
+  transform: translateY(50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.experience-card:hover .arrow-icon {
+  opacity: 1;
+}

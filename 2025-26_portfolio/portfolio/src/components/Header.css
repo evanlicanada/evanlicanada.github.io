@@ -1,0 +1,49 @@
+/* src/components/Header.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f0f0f0; /* a very light gray */
+}
+
+.name {
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none; /* removes the bullet points */
+  gap: 1.5rem; /* adds space between list items */
+}
+
+nav a {
+  text-decoration: none; /* removes the underline */
+  color: #333;
+}
+/* src/components/Header.css */
+
+.header {
+  /* This makes the header stick to the top of the viewport */
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  /* These properties make it stretch from side to side */
+  width: 100%;
+  
+  /* We'll add a z-index to ensure it stays on top of other content */
+  z-index: 1000;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+}
+
+/* Optional: Add some padding to the body so content doesn't get hidden under the header */
+body {
+  padding-top: 5rem; /* Adjust this value to match your header's height */
+}

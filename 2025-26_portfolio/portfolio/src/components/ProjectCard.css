@@ -1,0 +1,51 @@
+/* Style for the individual project cards */
+.project-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Here's the magic! */
+}
+
+/* This is the hover animation! */
+.project-card:hover {
+  transform: translateY(-5px); /* Moves the card up by 5px */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Makes the shadow bigger */
+}
+
+.project-image {
+  width: 100%;
+  height: 200px; /* fixed height for consistency */
+  object-fit: cover; /* ensures the image fills the space */
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.tech-stack {
+  margin: 1rem 0;
+}
+
+.tech-tag {
+  background-color: #e9e9e9;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.project-links a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #007bff;
+}
+
+/* src/components/ProjectCard.css */
+
+.project-image {
+  width: 100%;
+  height: 200px; /* or whatever height you prefer */
+  object-fit: cover;
+  border-radius: 8px 8px 0 0; /* matches the card's border radius */
+}

@@ -1,0 +1,22 @@
+/* src/components/ExperienceSection.css */
+.experience-section {
+  /* Add min-height to make it full screen if you want */
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* In src/components/ExperienceCard.css */
+.experience-card {
+  width: 100%; /* Ensures it stretches all the way across */
+  height: 300px; /* Adjust height for a larger box */
+  margin-bottom: 0; /* Removes the space between cards */
+  border-radius: 0; /* Makes corners sharp so they touch */
+}
