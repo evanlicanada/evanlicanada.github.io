@@ -1,0 +1,91 @@
+/* 1. SECTION CONTAINER (Full Screen, Relative Positioning) */
+.intro-section {
+  width: 100%;
+  min-height: 100vh;
+  
+  /* Centering the Content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  /* CRUCIAL for video/overlay positioning */
+  position: relative; 
+  
+  text-align: center;
+  color: white; /* Default text color over the dark background */
+  transform: translateZ(0);
+}
+
+/* 2. BACKGROUND VIDEO STYLING */
+.background-video {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* CRUCIAL: Ensures video covers the container without empty space */
+  object-fit: cover; 
+  
+  z-index: 0; /* Ensures it is at the very bottom layer */
+
+  /* FIX 2: Apply hardware acceleration directly to the video element */
+  transform: translateZ(0);
+  will-change: transform;
+  
+  /* FIX 3: Apply darkening directly to the video using a filter */
+  filter: brightness(0.7);
+  
+  /* NEW FIX (Crucial): Force the transition duration to 0s (instant) 
+     for filter and opacity to override any slow external global transition. */
+  transition: filter 0s, opacity 0s;
+}
+
+/* 3. OVERLAY (Darkening/Color Filter) */
+.intro-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Dark semi-transparent color for contrast */
+  background-color: rgba(0, 0, 0, 0); 
+  z-index: 1;
+}
+
+/* 4. TEXT CONTENT STYLING (Ensure it sits above the video and overlay) */
+.intro-content {
+  position: relative; 
+  z-index: 2; /* Ensures content is above the overlay */
+  padding: 2rem;
+  max-width: 900px;
+}
+
+.greeting {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #c0c0c0;
+  margin-bottom: 0.5rem;
+}
+
+.main-name {
+  font-size: 6vw; 
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.tagline, .focus-area {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-top: 1.5rem;
+  color: #e0e0e0;
+}
+
+@media (min-width: 1400px) {
+    .main-name {
+        font-size: 250px;
+    }
+}

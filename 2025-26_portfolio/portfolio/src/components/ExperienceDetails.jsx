@@ -9,8 +9,8 @@ const ExperienceDetails = ({ experience, onClose }) => {
     <div className="details-overlay">
       <div className="details-panel">
         <button className="close-btn" onClick={onClose}>&times;</button>
-        <h3>{experience.company}</h3>
-        <h4>{experience.title}</h4>
+        <h1>{experience.company}</h1>
+        <h2>{experience.title}</h2>
         <p className="timeframe">{experience.timeframe}</p>
         <p>{experience.description}</p>
         <ul>

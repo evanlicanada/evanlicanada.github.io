@@ -38,12 +38,12 @@ nav a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0rem 2rem;
   background-color: #f0f0f0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
 }
 
 /* Optional: Add some padding to the body so content doesn't get hidden under the header */
 body {
-  padding-top: 5rem; /* Adjust this value to match your header's height */
+  padding-top: 0rem; /* Adjust this value to match your header's height */
 }

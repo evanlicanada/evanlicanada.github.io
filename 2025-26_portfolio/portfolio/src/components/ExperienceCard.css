@@ -1,15 +1,16 @@
 /* src/components/ExperienceCard.css */
 .experience-card {
   width: 100%;
-  height: 200px; /* Adjust as needed */
+  height: 300px; /* Increased height for bigger text */
   background-size: cover;
   background-position: center;
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  margin-bottom: 1rem;
-  border-radius: 8px;
+  margin-bottom: 0; /* Ensures cards are touching */
+  border-radius: 0; /* Ensures cards are touching */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateZ(0); /* Flicker fix */
 }
 
 .overlay {
@@ -22,29 +23,47 @@
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  justify-content: center; /* VERTICALLY centers the content group */
+  align-items: left; /* HORIZONTALLY centers the content group */
+  text-align: left;
   backdrop-filter: blur(0);
-  transition: backdrop-filter 0.3s ease;
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease;
 }
 
 .experience-card:hover .overlay {
   background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px); /* Blurs the background on hover */
+  backdrop-filter: blur(10px); /* Blurs the background on hover */
 }
 
 .company-name, .job-title, .arrow-icon {
   opacity: 1;
   transition: opacity 0.3s ease;
+  /* Ensure no external margins are pushing them apart */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.company-name {
+  margin-left: 30px;
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem; /* Small space between company and job title */
+}
+
+.job-title {
+  margin-left: 30px;
+  font-size: 1.5rem;
+  /* Removed margin-top to use margin-bottom from .company-name */
+  color: white;
 }
 
 .arrow-icon {
-  font-size: 2rem;
+  font-size: 5rem;
   position: absolute;
   right: 20px;
-  bottom: 50%;
-  transform: translateY(50%);
+  top: 50%; /* Changed from bottom: 50% for cleaner centering */
+  transform: translateY(-50%); /* Centers the icon vertically */
   opacity: 0;
   transition: opacity 0.3s ease;
 }

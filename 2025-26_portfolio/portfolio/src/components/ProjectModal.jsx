@@ -12,7 +12,6 @@ const ProjectModal = ({ project, onClose }) => {
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
 
         <img src={project.image} alt={project.title} className="modal-image" />
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close-btn" onClick={onClose}>&times;</button>
             
             {/* New wrapper for the text content */}
@@ -35,7 +34,6 @@ const ProjectModal = ({ project, onClose }) => {
                 </div>
             </div>
             </div>
-      </div>
     </div>
   );
 };

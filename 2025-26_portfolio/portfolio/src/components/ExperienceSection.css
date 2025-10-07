@@ -1,7 +1,7 @@
 /* src/components/ExperienceSection.css */
 .experience-section {
   /* Add min-height to make it full screen if you want */
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding: 2rem 0;
 }
 

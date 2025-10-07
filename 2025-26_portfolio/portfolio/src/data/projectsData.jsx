@@ -3,20 +3,28 @@
 // This array will hold all of your project information.
 export const projects = [
   {
-    title: "Project 1: Automated Plant Waterer",
-    description: "A smart system that uses a Raspberry Pi and soil sensors to automatically water plants and send you updates.",
+    title: "Fully Autonomous Robot",
+    description: "A fully autonomous robot designed to navigate obstacles, then detect and retrieve specified objects",
     // You can add a new property here!
-    detailedDescription: "This project was a great introduction to embedded systems. I wrote the Python script to read sensor data and control the water pump, and then used a simple web server to send updates to my phone. The biggest challenge was calibrating the sensors to ensure accurate readings.",
-    techStack: ["Python", "Raspberry Pi", "C++"],
+    detailedDescription: "Developed the core control logic using PlatformIO/C++ and a multi-ESP32 architecture, enabling robust and responsive autonomous navigation. Engineered a real-time navigation system using infrared reflectance sensors and PID control, achieving near 100\% path consistency at speeds of 1-2 m/s. Designed and implemented a closed-loop pet detection and retrieval system with LIDAR sensors and magnetometers, consistently collecting items in under 5 seconds. Collaborated in a four-person team over four months to design and build the robot leading to a 2nd place finish out of 15 teams in the 2025 Robot Summer competition",
+    techStack: ["ESP32", "C++", "3D Printing", "Laser Cutting"],
     githubLink: "https://github.com/your-username/your-repo-1",
-    image: "/images/pikachu_plush.jpg",
+    image: "/images/robot_summer.jpg",
   },
   {
-    title: "Project 2: Personal Portfolio Website",
-    description: "This very website! A modern and minimalist site built with React and Vite to showcase my skills and projects.",
+    title: "Relay Server Based Display",
+    description: "Using an ESP32 in a known network as a relay, this allows me to have an ESP32 (embedded into a 3d printed pot) display a message sent from anywhere in the world",
     detailedDescription: "A description with lots more details",
-    techStack: ["React", "Vite", "CSS"],
+    techStack: ["ESP32", "3D Printing", "Python"],
     githubLink: "https://github.com/your-username/your-repo-2",
-    image: "/images/pikachu_plush.jpg",
+    image: "/images/gradient2.jpg",
   },
+  {
+    title: "Automatic Drink Dispenser",
+    description: "A drink dispenser that can mix a variety of drinks automatically",
+    detailedDescription: "A description with lots more details",
+    techStack: ["Arduino", "Woodworking", "Stepper motors", "Pumps"],
+    githubLink: "https://github.com/your-username/your-repo-3",
+    image: "/images/gradient2.jpg",
+  }
 ];
