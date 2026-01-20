@@ -7,6 +7,7 @@ const ExperienceDetails = ({ experience, onClose }) => {
 
   return (
     <div className="details-overlay">
+      <div className="back-panel"></div>
       <div className="details-panel">
         <button className="close-btn" onClick={onClose}>&times;</button>
         <h1>{experience.company}</h1>

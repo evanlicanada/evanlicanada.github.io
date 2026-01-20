@@ -11,6 +11,7 @@
 .project-card:hover {
   transform: translateY(-5px); /* Moves the card up by 5px */
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Makes the shadow bigger */
+  cursor:pointer;
 }
 
 .project-image {

@@ -1,6 +1,7 @@
 // src/components/ProjectModal.jsx
 import React from 'react';
 import './ProjectModal.css';
+import { Link } from 'react-router-dom'; // Ensure this is imported
 
 const ProjectModal = ({ project, onClose }) => {
   if (!project) {
@@ -22,11 +23,9 @@ const ProjectModal = ({ project, onClose }) => {
                 <p>{project.description}</p>
                 <p>{project.detailedDescription}</p>
                 <div className="modal-links">
-                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                        View on GitHub
-                        </a>
+                        <Link to={project.githubLink} rel="noopener noreferrer"> More Details </Link> 
                         {project.liveLink && (
-                        <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                        <a href={project.liveLink} rel="noopener noreferrer">
                             View Live
                         </a>
                         )}
