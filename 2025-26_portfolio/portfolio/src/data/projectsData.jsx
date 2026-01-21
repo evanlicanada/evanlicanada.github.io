@@ -25,7 +25,7 @@ export const projects = [
     sections: [
       { type: 'image', value: '/images/under_construction.jpg', alt: 'Under Construction - Come back soon!' },
     ],
-    image: "/images/gradient2.jpg",
+    image: "/images/project-relay-flowerpot/full_pot.png",
   },
   {
     title: "Automatic Drink Dispenser",
@@ -44,7 +44,7 @@ export const projects = [
     description: "A virtual robot created that can navigate a Gazebo environment using machine learning and PID control",
     detailedDescription: "In order to compete in the ENPH353 competition, we created, tested and deplayed a robot that could navigate a Gazebo environment using computer vision and PID, and could read signage using a CNN + RNN model.",
     techStack: ["ROS", "Python", "Pytorch", "Gazebo", "Machine Learning"],
-    githubLink: "projects/ML-robot",
+    githubLink: "/project/ML-robot",
     image: "/images/project-ML-robot/cover.png",
     id: "ML-robot",
     sections: [
@@ -56,7 +56,7 @@ export const projects = [
     description: "Designed and assembled a compact steering PCB using KiCAD",
     detailedDescription: "My First PCB project, I designed and assembled a steering PCB for an electric vehicle at UBC supermileage using KiCAD, incorporating essential components such as an emergency shutoff, starter motor, and driver control interfaces.",
     techStack: ["KiCAD", "PCB Design", "Soldering"],
-    githubLink: "projects/steering-pcb",
+    githubLink: "/project/steering-pcb",
     image: "/images/project-steering-pcb/cover.jpg",
     sections: [
       { type: 'image', value: '/images/under_construction.jpg', alt: 'Under Construction - Come back soon!' },
@@ -68,7 +68,7 @@ export const projects = [
     description: "I developed the firmware for a custom battery management system for the urban concept vehicle",
     detailedDescription: "Designed and implemented a Battery Management System (BMS) controller for an electric vehicle at UBC supermileage using STM32CUBEIDE and a STM32G0, ensuring safe and efficient battery operation",
     techStack: ["KiCAD", "PCB Design", "Soldering"],
-    githubLink: "projects/bms-controller",
+    githubLink: "/project/bms-controller",
     image: "/images/gradient2.jpg",
     id: "bms-controller",
     sections: [
@@ -80,7 +80,7 @@ export const projects = [
     description: "My personal portfolio website - you're looking at it right now!",
     detailedDescription: "I decided to create my own portfolio website to get more experience in webdev and showcase my projects. This website was built using React, JavaScript, and CSS. It replaced an old version built using just HTML and CSS.",
     techStack: ["React", "JavaScript", "CSS"],
-    githubLink: "/projects/portfolio-website",
+    githubLink: "/project/portfolio-website",
     image: "/images/project-portfolio-website/cover.png",
     id: "portfolio-website",
     sections: [
@@ -92,7 +92,7 @@ export const projects = [
     description: "Custom arduino controller to schedule and activate sprinkler zones automatically",
     detailedDescription: "A schedule can be inputted by the user using a 4x4 keypad with feedback given visually via a LCD display with a custom UI. The sprinklers are then controlled using relays. THe whole system is built around an Arduino.",
     techStack: ["Arduino", "C++"],
-    githubLink: "/projects/sprinkler-control",
+    githubLink: "/project/sprinkler-control",
     image: "/images/project-sprinkler-control/cover.jpg",
     id: "sprinkler-control",
     sections: [
