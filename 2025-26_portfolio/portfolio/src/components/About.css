@@ -18,10 +18,9 @@
   padding: 4rem 2rem;
   background-color: rgb(34, 40, 51)
 }
-
 .about-content {
   max-width: 100%;
-  text-align: right;
+  text-align: justify;
   color: rgb(73, 105, 135);
   padding: 0 1rem;
 }
@@ -39,19 +38,20 @@
 }
 
 .profile-photo {
-  width: 500px;
-  height: 500px;
+  width: min(400px, 60vh);
+
+  height: min(400px, 60vh);
   border-radius: 20%;
   object-fit: cover;
   /*  border: 10px solid rgb(90, 128, 163); */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1300px) {
   .about-section {
     flex-direction: row;
     justify-content: center;
-    padding: 4rem 20rem;
+    padding: 4rem 10vw;
   }
 
   .about-content{

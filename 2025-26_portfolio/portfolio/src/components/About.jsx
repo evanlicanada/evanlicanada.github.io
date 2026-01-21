@@ -15,7 +15,7 @@ const About = () => {
           I'm currently seeking an internship where I can apply my skills and learn from a team of talented engineers. Let's build something great together!
         </p> */}
         <p>I love working on embedded systems, robotics, electronics and all sorts of other projects (take a look below)! I'm currently looking for an internship starting in Summer 2026.</p>
-        <p>Outside of engineering, I love playing sports - my favourite are skiing, swimming and fencing. I also really enjoy getting lost in a story, book or movie, and playing /messing around with everything from Lego to video games to ny little brother!</p>
+        <p>Outside of engineering, I love playing sports - my favourite are skiing, swimming and fencing. I also really enjoy getting lost in a story, book or movie, and playing/messing around with everything from Lego to video games to my little brother!</p>
       </div>
       <div className="about-image">
         <img src={profileImage} alt="Evan" className="profile-photo" />

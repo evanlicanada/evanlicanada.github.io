@@ -36,10 +36,14 @@
 }
 
 /* For smaller screens, you might want to adjust the width */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .modal-content {
     width: 95%;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns items to the top */
+    gap: 2rem; /* Adds space between the image and the text */
   }
+  
 }
 
 .modal-close-btn {
@@ -70,7 +74,7 @@
 }
 
 .modal-links a {
-  margin: 0 1rem;
+  margin: 0 1rem; 
 }
 
 @keyframes fadeIn {
