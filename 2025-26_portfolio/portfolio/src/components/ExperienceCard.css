@@ -51,6 +51,16 @@
   margin-bottom: 0.5rem; /* Small space between company and job title */
 }
 
+@media (max-width: 800px) {
+  .company-name {
+    font-size: 3rem;
+  }
+
+  .job-title {
+    font-size: 1rem;
+  }
+}
+
 .job-title {
   margin-left: 30px;
   font-size: 1.5rem;

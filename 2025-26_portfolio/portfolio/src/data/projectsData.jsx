@@ -79,7 +79,7 @@ export const projects = [
     title: "Portfolio Website",
     description: "My personal portfolio website - you're looking at it right now!",
     detailedDescription: "I decided to create my own portfolio website to get more experience in webdev and showcase my projects. This website was built using React, JavaScript, and CSS. It replaced an old version built using just HTML and CSS.",
-    techStack: ["React", "JavaScript", "CSS"],
+    techStack: ["React", "Vite", "JavaScript", "CSS"],
     githubLink: "/project/portfolio-website",
     image: "/images/project-portfolio-website/cover.png",
     id: "portfolio-website",

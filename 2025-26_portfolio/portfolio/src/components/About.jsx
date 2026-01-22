@@ -6,6 +6,9 @@ import profileImage from '../assets/headshot.jpg'; // We'll add this image soon!
 const About = () => {
   return (
     <section id="about" className="about-section">
+      <div className="about-image">
+        <img src={profileImage} alt="Evan" className="profile-photo" />
+      </div>
       <div className="about-content">
         {/* <h2>About Me</h2>
         <p>
@@ -14,12 +17,9 @@ const About = () => {
         <p>
           I'm currently seeking an internship where I can apply my skills and learn from a team of talented engineers. Let's build something great together!
         </p> */}
-        <p>I love working on embedded systems, robotics, electronics and all sorts of other projects (take a look below)! I'm currently looking for an internship starting in Summer 2026.</p>
-        <p>Outside of engineering, I love playing sports - my favourite are skiing, swimming and fencing. I also really enjoy getting lost in a story, book or movie, and playing/messing around with everything from Lego to video games to my little brother!</p>
+        <p>Whether I’m debugging a ROS node, refining a PID controller, or carving down a mountain, I love the challenge of technical precision. I’m an Engineering Physics student at UBC who lives for the 'aha!' moment in robotics and electronics. When I'm not working or tinkering, you’ll find me on the slopes, in the pool, or getting lost in a good book. I’m currently looking for a Summer 2026 internship to dive into the next big project.</p>
       </div>
-      <div className="about-image">
-        <img src={profileImage} alt="Evan" className="profile-photo" />
-      </div>
+      
     </section>
   );
 };

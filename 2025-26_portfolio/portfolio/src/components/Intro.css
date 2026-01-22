@@ -70,7 +70,7 @@
 }
 
 .main-name {
-  font-size: 6vw; 
+  font-size: max(15vw, 15vh); 
   font-weight: 800;
   margin: 0;
   line-height: 1.1;
