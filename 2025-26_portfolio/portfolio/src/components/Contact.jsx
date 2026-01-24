@@ -10,7 +10,7 @@ const Contact = () => {
       <div className="contact-links">
         <a href="https://www.linkedin.com/in/evan-li-canada/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/evanlicanada" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="evanlicanada@gmail.com">evanlicanada@gmail.com</a>
+        <a href="mailto:eli45@student.ubc.ca">eli45@student.ubc.ca</a>
       </div>
     </section>
   );
