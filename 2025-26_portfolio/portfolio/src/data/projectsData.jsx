@@ -8,7 +8,8 @@ export const projects = [
     // You can add a new property here!
     detailedDescription: "Developed the core control logic using PlatformIO/C++ and a multi-ESP32 architecture, enabling robust and responsive autonomous navigation. Engineered a real-time navigation system using infrared reflectance sensors and PID control, achieving near 100\% path consistency at speeds of 1-2 m/s. Designed and implemented a closed-loop pet detection and retrieval system with LIDAR sensors and magnetometers, consistently collecting items in under 5 seconds. Collaborated in a four-person team over four months to design and build the robot leading to a 2nd place finish out of 15 teams in the 2025 Robot Summer competition",
     techStack: ["ESP32", "C++", "3D Printing", "Laser Cutting"],
-    githubLink: "/project/robot-summer",
+    //githubLink: "/project/robot-summer",
+    githubLink: "https://github.com/evanlicanada/Robot-Summer-Team-7",
     id: "robot-summer",
     sections: [
       { type: 'image', value: '/images/under_construction.jpg', alt: 'Under Construction - Come back soon!' },
@@ -20,7 +21,8 @@ export const projects = [
     description: "A flowerpot that can display messages sent from anywhere in the world via a relay server",
     detailedDescription: "This project can be broken down into three pieces. The flowerpot (with a LCD display), the relay server (setup with port forwarding), and the lead computer (sends messages).",
     techStack: ["ESP32", "3D Printing", "Python"],
-    githubLink: "/project/relay-flowerpot",
+    //githubLink: "/project/relay-flowerpot",
+    githubLink: "https://github.com/evanlicanada/Relay-server-esp-flowerpot",
     id: "relay-flowerpot",
     sections: [
       { type: 'image', value: '/images/under_construction.jpg', alt: 'Under Construction - Come back soon!' },
@@ -44,7 +46,8 @@ export const projects = [
     description: "A virtual robot created that can navigate a Gazebo environment using machine learning and PID control",
     detailedDescription: "In order to compete in the ENPH353 competition, we created, tested and deplayed a robot that could navigate a Gazebo environment using computer vision and PID, and could read signage using a CNN + RNN model.",
     techStack: ["ROS", "Python", "Pytorch", "Gazebo", "Machine Learning"],
-    githubLink: "/project/ML-robot",
+    //githubLink: "/project/ML-robot",
+    githubLink: "https://github.com/evanlicanada/ENPH353-team-9-competition-stuff",
     image: "/images/project-ML-robot/cover.png",
     id: "ML-robot",
     sections: [
@@ -80,7 +83,8 @@ export const projects = [
     description: "My personal portfolio website - you're looking at it right now!",
     detailedDescription: "I decided to create my own portfolio website to get more experience in webdev and showcase my projects. This website was built using React, JavaScript, and CSS. It replaced an old version built using just HTML and CSS.",
     techStack: ["React", "Vite", "JavaScript", "CSS"],
-    githubLink: "/project/portfolio-website",
+    //githubLink: "/project/portfolio-website",
+    githubLink: "https://github.com/evanlicanada/evanlicanada.github.io",
     image: "/images/project-portfolio-website/cover.png",
     id: "portfolio-website",
     sections: [

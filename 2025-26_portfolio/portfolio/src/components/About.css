@@ -39,9 +39,9 @@
 }
 
 .profile-photo {
-  width: min(400px, 60vh);
+  width: min(300px, 40vh);
 
-  height: min(400px, 60vh);
+  height: min(300px, 40vh);
   border-radius: 20%;
   object-fit: cover;
   /*  border: 10px solid rgb(90, 128, 163); */
