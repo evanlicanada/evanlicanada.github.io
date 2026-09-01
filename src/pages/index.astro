@@ -1,11 +1,33 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import MainApp from '../components/MainApp';
+import { getCollection } from 'astro:content';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const rawProjects = await getCollection('projects');
+
+// Sort by order
+const projects = rawProjects
+  .sort((a, b) => (a.data.order ?? 100) - (b.data.order ?? 100))
+  .map((p) => ({
+    id: p.id,
+    slug: p.id,
+    title: p.data.title,
+    starName: p.data.starName,
+    coord: p.data.coord as [number, number, number],
+    color: p.data.color,
+    status: p.data.status,
+    category: p.data.category,
+    summary: p.data.summary,
+    specs: p.data.specs ?? [],
+    tech: p.data.tech ?? [],
+    coverImage: p.data.coverImage,
+    github: p.data.github,
+    schematicUrl: p.data.schematicUrl,
+  }));
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Evan // UBC Engineering Physics">
+	<main class="w-full min-h-screen relative bg-nasa-bg text-nasa-white font-mono">
+    <MainApp client:load initialProjects={projects} />
+	</main>
 </Layout>

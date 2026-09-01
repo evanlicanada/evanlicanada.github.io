@@ -1,0 +1,63 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<Layout title={`${project.data.title} // PAYLOAD BRIEF`}>
+  <main class="min-h-screen bg-nasa-bg text-nasa-white p-6 md:p-12 overflow-y-auto">
+    <div class="max-w-4xl mx-auto space-y-8">
+      {/* Navigation Top Bar */}
+      <div class="flex justify-between items-center border-b border-nasa-cyan/30 pb-4">
+        <a 
+          href="/" 
+          class="text-xs text-nasa-cyan hover:text-white font-display tracking-widest uppercase flex items-center gap-2 border border-nasa-cyan/30 px-3 py-1.5 bg-nasa-cyan/10 hover:bg-nasa-cyan/20 transition-all"
+        >
+          &lt; RETURN TO STELLAR NAVIGATION CHART
+        </a>
+        <div class="text-[10px] text-nasa-amber font-mono">
+          STATUS: [{project.data.status}] // SYSTEM: [{project.data.starName}]
+        </div>
+      </div>
+
+      {/* Hero Header */}
+      <header class="space-y-3">
+        <div class="text-xs text-nasa-cyan font-mono tracking-widest">
+          SUBSYSTEM // {project.data.category}
+        </div>
+        <h1 class="text-2xl md:text-4xl font-display font-bold tracking-wider text-white">
+          {project.data.title}
+        </h1>
+        <p class="text-sm md:text-base text-nasa-white/80 leading-relaxed font-mono">
+          {project.data.summary}
+        </p>
+
+        {/* Tech Badges */}
+        {project.data.tech && (
+          <div class="flex flex-wrap gap-2 pt-2">
+            {project.data.tech.map((t: string) => (
+              <span class="text-xs bg-nasa-cyan/10 border border-nasa-cyan/30 text-nasa-cyan px-2.5 py-1 font-mono">
+                {t}
+              </span>
+            ))}
+          </div>
+        )}
+      </header>
+
+      {/* Markdown Content */}
+      <article class="prose prose-invert prose-nasa font-mono text-sm leading-relaxed max-w-none border-t border-white/10 pt-6">
+        <Content />
+      </article>
+    </div>
+  </main>
+</Layout>
