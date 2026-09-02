@@ -18,6 +18,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import StarMapCanvas, { type StarNodeData, type ProjectItem } from './starmap/StarMapCanvas';
+import { getStatusConfig } from '../utils/status';
 
 interface Props {
   initialProjects?: ProjectItem[];
@@ -227,7 +228,7 @@ export default function MainApp({ initialProjects = [] }: Props) {
               <div className="bg-black/40 border border-white/10 p-3">
                 <div className="text-[10px] text-nasa-white/50">EDUCATION</div>
                 <div className="text-xs text-nasa-white font-bold mt-0.5">UBC Engineering Physics</div>
-                <div className="text-[10px] text-nasa-cyan">Class of 2027 • 4.2/4.33 GPA</div>
+                <div className="text-[10px] text-nasa-cyan">Class of 2028 • 4.2/4.33 GPA</div>
               </div>
               <div className="bg-black/40 border border-white/10 p-3">
                 <div className="text-[10px] text-nasa-white/50">HARDWARE CORE</div>
@@ -320,9 +321,14 @@ export default function MainApp({ initialProjects = [] }: Props) {
                           </h3>
                         </div>
                         <div className="flex flex-col items-end">
-                          <span className="text-[10px] font-mono px-2 py-0.5 border" style={{ color: project.color, borderColor: `${project.color}50` }}>
-                            [{project.status}]
-                          </span>
+                          {(() => {
+                            const statusCfg = getStatusConfig(project.status);
+                            return (
+                              <span className={`text-[10px] font-mono px-2 py-0.5 border ${statusCfg.textClass} ${statusCfg.borderClass} ${statusCfg.bgClass}`}>
+                                [{project.status}]
+                              </span>
+                            );
+                          })()}
                           <span className="text-[9px] text-nasa-white/50 font-mono mt-1">
                             SYS: {project.starName}
                           </span>
@@ -634,7 +640,7 @@ export default function MainApp({ initialProjects = [] }: Props) {
               </div>
               <div>
                 <div className="text-[9px] text-nasa-white/50">STATUS</div>
-                <div className="text-nasa-amber font-bold">{selectedStar.status}</div>
+                <div className={`font-bold ${getStatusConfig(selectedStar.status).textClass}`}>{selectedStar.status}</div>
               </div>
               <div>
                 <div className="text-[9px] text-nasa-white/50">COORDINATES</div>

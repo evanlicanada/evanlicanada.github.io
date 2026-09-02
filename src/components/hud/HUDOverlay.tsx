@@ -15,6 +15,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import type { StarNodeData } from '../starmap/StarMapCanvas';
+import { getStatusConfig } from '../../utils/status';
 
 // Web Audio API Synthesizer for NASA-punk tactile sound effects
 class SoundSynth {
@@ -367,7 +368,7 @@ const DossierDrawer = ({
               </div>
               <div>
                 <div className="text-[9px] text-nasa-white/50">STATUS</div>
-                <div className="text-nasa-amber font-bold">{activeStar.status}</div>
+                <div className={`font-bold ${getStatusConfig(activeStar.status).textClass}`}>{activeStar.status}</div>
               </div>
               <div>
                 <div className="text-[9px] text-nasa-white/50">COORDINATES</div>

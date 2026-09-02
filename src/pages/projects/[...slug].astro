@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
+import { getStatusConfig } from '../../utils/status';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -12,6 +13,7 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content } = await render(project);
+const statusCfg = getStatusConfig(project.data.status);
 ---
 
 <Layout title={`${project.data.title} // PAYLOAD BRIEF`}>
@@ -25,8 +27,11 @@ const { Content } = await render(project);
         >
           &lt; RETURN TO STELLAR NAVIGATION CHART
         </a>
-        <div class="text-[10px] text-nasa-amber font-mono">
-          STATUS: [{project.data.status}] // SYSTEM: [{project.data.starName}]
+        <div class="text-[10px] font-mono flex items-center gap-2">
+          <span class={`px-2 py-0.5 border text-[10px] ${statusCfg.textClass} ${statusCfg.borderClass} ${statusCfg.bgClass}`}>
+            [{project.data.status}]
+          </span>
+          <span class="text-nasa-white/50">// SYSTEM: [{project.data.starName}]</span>
         </div>
       </div>
 

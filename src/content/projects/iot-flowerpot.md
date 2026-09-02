@@ -5,7 +5,7 @@ coord: [2, -5, 3]
 color: "#00FF00"
 status: "OPERATIONAL"
 category: "EMBEDDED"
-order: 3
+order: 4
 summary: "A full-stack IoT messaging system featuring a custom Python backend and a wireless relay server."
 specs:
   - label: "Microcontroller"
