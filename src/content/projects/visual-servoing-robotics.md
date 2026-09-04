@@ -42,7 +42,7 @@ Below is a demonstration of the hybrid 2.5D IBVS controller running on the physi
   Your browser does not support the video tag.
 </video>
 
-The perception pipeline isolates the target using HSV color thresholding and morphological filtering, extracting subpixel centroids via image moments and deprojecting features into 3D camera coordinates:
+The perception pipeline isolates the target using HSV color thresholding and morphological filtering, fitting a bounding rectangle to track the geometric center and monitor contour area:
 
 ![Visual Servoing Tracking Output](/images/project-visual-servoing/tracking_CV.png)
 
@@ -53,11 +53,14 @@ The perception pipeline isolates the target using HSV color thresholding and mor
 ### Perception & Hand-Eye Calibration
 - **Camera Geometry & Distortion**: Formulated perspective projection using pinhole camera models and intrinsic calibration matrices ($K$). Modeled 5-coefficient geometric lens distortion (radial $k_1, k_2, k_3$ and tangential $p_1, p_2$) to map between 2D pixel coordinates and normalized 3D rays.
 - **Eye-in-Hand Calibration ($AX = XB$)**: Implemented hand-eye calibration using ChArUco targets with OpenCV (`cv2.solvePnP` and `cv2.calibrateHandEye`). Because the QArm's camera is physically mounted behind the wrist joint rather than on the flange, moving the wrist alters the camera-to-gripper relationship. To handle this, I engineered a dynamic transformation pipeline chaining the static hand-eye matrix with the live wrist rotation: $T_{cam2gripper} = T_{rot}(\varphi_4) \cdot T_{hand-eye}$.
-- **RGB-D Spatial Filtering**: Extracted target centroids $(u,v)$ via image moments ($m_{00}, m_{10}, m_{01}$) and deprojected 2D coordinates into 3D using ROS 2 `image_geometry`. Coupled this with a $5\times 5$ spatial patch-median depth filter (`get_patch_median_depth`) and temporal buffers to eliminate depth dropouts, noise spikes, and boundary bleeding from the RealSense D415.
+- **Target Tracking & RGB-D Spatial Filtering**:
+  - *PBVS Perception*: Uses 0th and 1st order image moments ($m_{00}, m_{10}, m_{01}$) to extract subpixel centroids $(u,v)$. This centroid formulation is forgiving when the gripper moves in close and the object boundary partially exits the camera frame during the grab sequence.
+  - *IBVS Perception*: Fits a minimum-area bounding rectangle to the segmented contour and tracks the center of that fitted rectangle. Fitting a rectangle preserves the target's geometric shape and area across continuous tracking frames, enabling accurate contour-area scaling for depth estimation.
+  - *Depth Filtering*: Deprojected 2D coordinates into 3D using ROS 2 `image_geometry`, coupled with a $5\times 5$ spatial patch-median depth filter (`get_patch_median_depth`) and temporal buffers to eliminate RealSense D415 depth dropouts and edge boundary bleeding.
 
 ### Control & Visual Servoing Algorithms
 - **Position-Based Visual Servoing (PBVS)**: Built a closed-loop 3D Cartesian pick-and-place system. Chained coordinate transformations from Camera Frame $\to$ Gripper Frame $\to$ Base Frame via forward kinematics ($T_{gripper2base}$). Implemented rolling median buffers for Cartesian noise suppression, coordinating pickup via a 4-state Finite State Machine (`PRONE` $\to$ `SURVEY` $\to$ `GRAB` $\to$ `DROP`).
-- **Hybrid 2.5D Image-Based Visual Servoing (IBVS)**: Designed an IBVS architecture using the Image Jacobian (Interaction Matrix) to regulate 2D image plane errors $(u, v)$ and keep targets centered in the camera FOV. Coupled this with real-time depth ($Z$) from the RealSense camera (and contour-area scaling for near-field distances $<0.4$m) to command forward approach velocities along the optical axis, enabling smooth autonomous target tracking across the workspace.
+- **Hybrid 2.5D Image-Based Visual Servoing (IBVS)**: Designed an IBVS architecture using the Image Jacobian (Interaction Matrix) to regulate 2D image plane errors $(u, v)$ from the bounding rectangle center, keeping targets centered in the camera FOV. Coupled this with real-time depth ($Z$) from the RealSense camera (falling back to bounding rectangle area estimation for near-field distances $<0.4$m) to command forward approach velocities along the optical axis, enabling smooth autonomous target pursuit.
 
 ---
 
@@ -74,5 +77,5 @@ The perception pipeline isolates the target using HSV color thresholding and mor
 ## Practical Challenges & Hardware Solutions
 
 - **Mechanical Cantilever Sag**: When extending forward at long reaches, the QArm experienced mechanical gravity sag of up to 4–5 cm vertically. Implemented software-defined vertical compensation offsets parameterized by radial reach distance.
-- **Depth Sensor Dropouts & Near-Field Limit**: RGB-D sensors only detect the front surface of an object, which would cause the gripper to close prematurely on the front face. Added a horizontal `grab_depth` translation offset during the grasp phase. When approaching within 0.4 m (below the RealSense D415 minimum sensing range), the system transitions to contour-area scaling to estimate relative proximity.
+- **Depth Sensor Dropouts & Near-Field Limit**: RGB-D sensors only detect the front surface of an object, which would cause the gripper to close prematurely on the front face. Added a horizontal `grab_depth` translation offset during the grasp phase. When approaching within 0.4 m (below the RealSense D415 minimum sensing range), the system transitions to bounding rectangle area scaling to estimate relative proximity.
 - **Motor Current Overloads & Gripper Stall**: Transitioning from simulation to physical QArms caused motor shutdowns when commanding rigid gripper positions. Built a 30 Hz control daemon that arbitrates joint positions while monitoring live motor currents, providing adaptive closed-loop torque control.
