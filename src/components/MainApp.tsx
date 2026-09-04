@@ -214,7 +214,7 @@ export default function MainApp({ initialProjects = [] }: Props) {
                 <span>LAUNCH 3D STELLAR MAP</span>
               </button>
               <a 
-                href="/resume.pdf" 
+                href="https://github.com/evanlicanada/Job-repo/blob/master/Resumes/Evan_Li_Resume_hardware.pdf" 
                 target="_blank"
                 className="px-5 py-2.5 bg-nasa-bg border border-white/20 text-nasa-white/90 hover:border-white font-display text-xs tracking-wider uppercase hover:bg-white/5 transition-all flex items-center gap-2"
               >
@@ -505,7 +505,7 @@ export default function MainApp({ initialProjects = [] }: Props) {
                 </div>
                 <div className="flex flex-wrap gap-1.5">
                   {[
-                    'PCB Design', 'KiCAD', 'Soldering',
+                    'PCB Design', 'KiCAD', 'LTspice', 'Soldering',
                     'STM32', 'Microcontrollers',
                     'Digital & Analog Circuits',
                     'FPGA', 'VHDL'

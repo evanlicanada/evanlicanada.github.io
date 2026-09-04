@@ -18,6 +18,7 @@ tech:
   - "UI/UX"
   - "Relays"
 github: ""
+coverImage: "/project_cover_imgs/sprinkler_cover.jpg"
 ---
 
 # Sprinkler Zone Controller
