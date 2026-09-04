@@ -34,6 +34,11 @@ px astro sync to regenerate the types, otherwise the dev server/build will fail 
 - **WARNING**: Do NOT use echo "content" >> file in PowerShell to append text. It defaults to UTF-16 (UCS-2) encoding, which will inject null bytes and corrupt CSS/JS parsers (like Tailwind's parser).
 - Use Add-Content -Path "..." -Value "..." -Encoding UTF8 or Python scripts if you need to append or generate files.
 
+### 5. LaTeX & Mathematical Notation (KaTeX)
+- LaTeX math formulas ($inline$ and $$display$$) are supported in Markdown using `remark-math`, `rehype-katex`, and `@astrojs/markdown-remark`.
+- KaTeX styles are imported via `import 'katex/dist/katex.min.css'` in `Layout.astro` and backed up by the KaTeX CDN stylesheet.
+- You can freely use standard LaTeX math syntax in project Markdown files (e.g. `$256 \to 64$`, `$T_{cam2gripper} = T_{rot}(\varphi_4) \cdot T_{hand-eye}$`, etc.).
+
 ## Dev Server Commands
 
 When starting the dev server, use background mode:

@@ -12,6 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^7.2.3",
     "@astrojs/react": "^6.0.3",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
@@ -20,9 +21,12 @@
     "@types/three": "^0.170.0",
     "astro": "^7.2.3",
     "clsx": "^2.1.1",
+    "katex": "^0.18.5",
     "lucide-react": "^0.468.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
     "tailwind-merge": "^2.5.5",
     "tailwindcss": "^4.3.3",
     "three": "^0.170.0"
