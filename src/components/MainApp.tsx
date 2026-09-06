@@ -396,20 +396,33 @@ export default function MainApp({ initialProjects = [] }: Props) {
             </div>
 
             <div className="space-y-6 border-l-2 border-nasa-cyan/30 pl-4 md:pl-6 ml-2">
-              {/* Robotics Developer */}
+              {/* Robotics Software Developer — Quanser */}
               <div className="relative space-y-2 bg-black/30 border border-white/10 p-5 corner-bracket-tl">
                 <div className="w-3 h-3 bg-nasa-cyan rounded-full absolute -left-[23px] md:-left-[31px] top-6 ring-4 ring-nasa-bg" />
                 <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-1">
                   <h3 className="text-base font-display font-bold text-white">
-                    Robotics Developer — UBC ECE & Quanser
+                    Robotics Software Developer — Quanser
                   </h3>
-                  <span className="text-xs text-nasa-cyan font-mono">May 2026 — Dec 2026</span>
+                  <span className="text-xs text-nasa-cyan font-mono">Sept 2026 — Dec 2026</span>
                 </div>
-                <div className="text-xs text-nasa-amber font-mono">ROS2 / Python / Quanser QArms</div>
+                <div className="text-xs text-nasa-amber font-mono">Python / MATLAB / Simulink / ROS 2</div>
                 <p className="text-xs sm:text-sm text-nasa-white/80 leading-relaxed">
-                  Developed comprehensive robotics labs (kinematics, visual servoing) for 400-level UBC engineering courses.
-                  Integrated ROS2 with proprietary Quanser hardware via Windows-to-Docker socket bridging and Python SDKs.
-                  Authored lab documents, answer keys, and codebase templates.
+                  Porting and modernizing complex manipulator kinematics, trajectory generation, and control algorithms from MATLAB/Simulink into Quanser's native Python implementation. Validating real-time deterministic control and architecting ROS 2 integrations.
+                </p>
+              </div>
+
+              {/* Robotics Lab Developer — UBC ECE */}
+              <div className="relative space-y-2 bg-black/30 border border-white/10 p-5 corner-bracket-tl">
+                <div className="w-3 h-3 bg-nasa-cyan/70 rounded-full absolute -left-[23px] md:-left-[31px] top-6 ring-4 ring-nasa-bg" />
+                <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-1">
+                  <h3 className="text-base font-display font-bold text-white">
+                    Robotics Lab Developer — UBC ECE
+                  </h3>
+                  <span className="text-xs text-nasa-cyan/80 font-mono">May 2026 — Aug 2026</span>
+                </div>
+                <div className="text-xs text-nasa-amber font-mono">ROS 2 / Quanser QArm / OpenCV / Docker</div>
+                <p className="text-xs sm:text-sm text-nasa-white/80 leading-relaxed">
+                  Designed and built 3 comprehensive hardware-software labs (kinematics, dynamics, PBVS, and Hybrid 2.5D IBVS) for 400-level UBC engineering courses (ELEC 442 & MECH 464). Implemented eye-in-hand ChArUco calibration, RGB-D filtering, and containerized ROS 2 Dev Containers.
                 </p>
               </div>
 
